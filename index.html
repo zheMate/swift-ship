@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>SwiftShip</title>
+</head>
+<body>
+    <div id="fullscreen-div">
+        <form class="modal" id="modal">
+            <div class="modal-content">
+                <div class="modal-head">
+                    <h3 id="modal-title">Добавьте получателя</h3>
+                    <button id="close-btn" type="button">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="modal-main">
+                    <div class="modal-row">
+                        <div class="modal-col">
+                            <label for="addr_ing_name">Имя получателя ?</label>
+                            <input type="text" placeholder="Например: Михаил" class="form-control" name="addr_ing_name">
+                        </div>
+                    </div>
+                    <div class="modal-row grid-row">
+                        <div class="modal-col">
+                            <label for="first_name">Ваше имя</label>
+                            <input type="text" placeholder="Имя" class="form-control" name="first_name">
+                        </div>
+                        <div class="modal-col">
+                            <label for="last_name">Ваша фамилия</label>
+                            <input type="text" placeholder="Фамилия" class="form-control" name="last_name">
+                        </div>
+                    </div>
+                    <div class="modal-row grid-row">
+                        <div class="modal-col">
+                            <label for="email">Ваша Эл. почта</label>
+                            <input type="email" placeholder="Email" class="form-control" name="email">
+                        </div>
+                        <div class="modal-col">
+                            <label for="phone">Телефон</label>
+                            <input type="text" placeholder="Номер телефона" class="form-control" name="phone">
+                        </div>
+                    </div>
+                    <div class="modal-row grid-row">
+                        <div class="modal-col">
+                            <label for="street_addr">Адрес</label>
+                            <input type="text" placeholder="Улица, дом, квартира и т.д" class="form-control" name="street_addr">
+                        </div>
+                        <div class="modal-col">
+                            <label for="postal_code">Почтовый индекс</label>
+                            <input type="text" placeholder="Например: 614046" class="form-control" name="postal_code">
+                        </div>
+                    </div>
+                    <div class="modal-row grid-row">
+                        <div class="modal-col">
+                            <label for="city_region_list">Город, Регион</label>
+                            <select name="city_region" id="city_region_list">
+                                <option>Очёр, Пермская обл.</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-row">
+                        <div class="modal-col">
+                            <label for="">Статус получателя</label>
+                            <select name="labels">
+                                <option value="Family">Родственники</option>
+                                <option value="Friends">Друзья</option>
+                                <option value="Colleagues">Коллеги</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-row" id="modal-btns">
+                        <button id="save-btn" type="submit">Сохранить</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
