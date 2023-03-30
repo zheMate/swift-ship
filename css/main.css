@@ -1,5 +1,8 @@
+/* Подключение шрифта Nunito */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
 
+/* **************************************** */
+/* Базовые стили и обнуление */
 * {
     padding: 0;
     margin: 0;
@@ -7,27 +10,292 @@
 }
 
 :root {
-    --primary-color: #2f72dfff;
-    --secondary-color: #ff6700ff;
+    --primary-color: #124BA7;
+    --secondary-color: #3BB273;
+    --secondary-blue: #5189E2;
+    --rich-black: #001011;
     --background-color: #f3f5f1;
-    --mint-green: #ccfbfeff;
+    --floral-white: #FFFCF2;
+    --anti-flash-white: #E7ECEF;
     --madder: #a71d31ff;
+    --secondary-madder: #AB3244;
     --pistachio: #88d18aff;
 }
 
-body{
+body {
     font-family: 'Nunito', sans-serif;
     min-height: 100vh;
     background-color: var(--background-color);
 }
 
-h1, h2, h3, h4{
-    color: var(--secondary-color);
+h1,
+h2,
+h3,
+h4 {
+    color: var(--rich-black);
 }
 
-input, button{
-    outline: 0;
+input,
+button {
+    outline-color: transparent;
     font-family: inherit;
     font-size: 1rem;
     border: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* **************************************** */
+
+/* Модальное окно */
+
+#fullscreen-div {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: none;
+}
+
+.modal {
+    background-color: #fff;
+    border-radius: 0.6rem;
+    overflow: hidden;
+    display: none;
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.modal-head {
+    background-color: var(--primary-color);
+    padding: 1.2rem 2.4rem;
+    font-size: 1.5rem;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.modal-head h3 {
+    color: var(--floral-white);
+    text-align: left;
+}
+
+#close-btn {
+    color: var(--rich-black);
+    font-size: 1.4rem;
+    display: block;
+    background-color: #fff;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    transition: all 200ms ease;
+}
+
+#close-btn:hover {
+    transform: scale(1.1);
+}
+
+.modal-main {
+    padding: 1.2rem 2.4rem;
+    max-width: 580px;
+    min-width: 500px;
+}
+
+.modal-row {
+    margin-bottom: 1.2rem;
+}
+
+.grid-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.3rem;
+}
+
+.modal-col label {
+    display: block;
+    font-weight: 700;
+    color: var(--rich-black);
+    margin-bottom: 0.6rem;
+}
+
+.modal-col input,
+.modal.col select {
+    border: 1px solid rgba(184, 183, 188, 0.5);
+    border-radius: 3px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+    outline-color: transparent;
+    width: 100%;
+}
+
+#modal-btns button {
+    font-size: 1.1rem;
+    color: var(--floral-white);
+    border-radius: 4px;
+    padding: 0.6rem 2rem;
+    transition: all 200ms ease;
+}
+
+#modal-btns button:hover {
+    transform: translateY(4px);
+}
+
+#save-btn,
+#update-btn {
+    box-shadow: 0 4px 0 0 var(--secondary-blue);
+    background-color: var(--primary-color);
+    margin-right: 0.6rem;
+}
+
+#save-btn:hover,
+#update-btn:hover {
+    box-shadow: 0 2px 0 0 var(--secondary-blue);
+}
+
+#delete-btn {
+    background-color: var(--madder);
+    box-shadow: 0 4px 0 0 var(--secondary-madder);
+}
+
+#delete-btn:hover {
+    box-shadow: 0 2px 0 0 var(--secondary-madder);
+}
+
+/* **************************************** */
+
+/* Таблица заказов */
+
+.order-book {
+    padding: 1.4rem;
+    margin: 0 auto;
+    max-width: 1200px;
+    min-width: 700px !important;
+}
+
+.order-book-content {
+    background-color: #fff;
+    padding: 1.6rem;
+    border-radius: 4px;
+}
+
+.order-book-head {
+    padding-top: 1.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.order-book-head h1 {
+    font-size: 2.2rem;
+}
+
+.order-book-head i {
+    color: var(--primary-color);
+    margin-right: 1rem;
+}
+
+.order-book-top {
+    padding-block: 1rem;
+}
+
+.order-book-top .btn {
+    color: #fff;
+    padding: 0.8rem;
+    border-radius: 3px;
+    transition: all 200ms ease;
+    background-color: var(--primary-color);
+    box-shadow: 0 4px 0 0 var(--secondary-blue);
+}
+
+.order-book-top .btn:hover {
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 0 var(--secondary-blue);
+}
+
+.order-book-list {
+    margin: 1rem 0;
+    min-height: 450px;
+}
+
+.order-table {
+    margin-top: 2rem;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.order-table thead {
+    border-bottom: 1px solid #e3e4f1;
+}
+
+.order-table thead tr th {
+    padding-bottom: 0.8rem;
+}
+
+.order-table tbody td {
+    padding: 1.5rem 0;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 600;
+}
+
+.order-table tbody td:nth-child(1) {
+    padding-left: 0.5rem;
+    padding-right: 1rem;
+}
+
+.order-table tbody td:nth-child(2) {
+    font-weight: 800;
+}
+
+.order-table .addressing-name {
+    color: var(--rich-black);
+}
+
+.order-table .address {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.order-table tbody td:nth-child(3) span {
+    background-color: var(--secondary-color);
+    color: #fff;
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+}
+
+.order-table tbody tr {
+    cursor: pointer;
+}
+
+.order-table tbody tr:hover {
+    background-color: var(--primary-color);
+    transition: all 200ms ease;
+}
+
+.order-table tbody tr:hover td,
+.order-table tbody tr:hover span {
+    color: #fff;
+}
+
+.order-table tbody tr:hover td:nth-child(3) span {
+    background-color: #fff;
+    color: rgba(0, 0, 0, 0.6);
+}
+/* **************************************** */
+/* Для сообщений об ошибках */
+.errorMsg{
+    border: 1px solid var(--madder);
 }
