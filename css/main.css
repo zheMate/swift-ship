@@ -298,5 +298,5 @@ button {
 /* **************************************** */
 /* Для сообщений об ошибках */
 .errorMsg{
-    border: 1px solid var(--madder);
+    border: 1px solid var(--madder)!important;
 }
