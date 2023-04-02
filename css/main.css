@@ -43,6 +43,10 @@ button {
     border: none;
 }
 
+input:focus {
+    outline-color: transparent;
+}
+
 button {
     cursor: pointer;
 }
@@ -131,8 +135,8 @@ button {
 
 .modal-col input,
 .modal-col select {
-    border: 1px solid rgba(184, 183, 188, 0.5);
-    border-radius: 3px;
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
     padding: 0.5rem 1rem;
     font-size: 1rem;
     font-family: inherit;
@@ -298,6 +302,37 @@ button {
 
 /* **************************************** */
 /* Для сообщений об ошибках */
-.errorMsg {
-    border: 1px solid var(--madder) !important;
+
+
+
+.modal-col.success input {
+    border-color: var(--secondary-color)!important;
 }
+
+.modal-col.error input {
+    border-color: var(--madder)!important;
+}
+
+.modal-col .error{
+    color: var(--madder)!important;
+    font-size: 1rem!important;
+    height: 13px!important;
+}
+
+.modal-col {
+    position: relative;
+}
+
+.modal-col .search{
+    padding-left: 2rem;
+}
+.modal-col i{
+    position: absolute;
+    top: 45%;
+    left: 10px;
+    transform: translateY(-50%);
+}
+
+/* .errorMsg {
+    border: 1px solid var(--madder) !important;
+} */

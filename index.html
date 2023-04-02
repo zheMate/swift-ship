@@ -27,47 +27,53 @@
                 <div class="modal-row">
                     <div class="modal-col">
                         <label for="addr_ing_name">Имя получателя ?</label>
-                        <input type="text" placeholder="Например: Михаил" class="form-control" name="addr_ing_name">
+                        <input type="text" placeholder="Например: Михаил" class="form-control" name="addr_ing_name" id="addr_ing_name">
+                        <div class="error"></div>
                     </div>
                 </div>
                 <div class="modal-row grid-row">
                     <div class="modal-col">
                         <label for="first_name">Ваше имя</label>
-                        <input type="text" placeholder="Имя" class="form-control" name="first_name">
+                        <input type="text" placeholder="Имя" class="form-control" name="first_name" id="first_name">
+                        <div class="error"></div>
                     </div>
                     <div class="modal-col">
                         <label for="last_name">Ваша фамилия</label>
-                        <input type="text" placeholder="Фамилия" class="form-control" name="last_name">
+                        <input type="text" placeholder="Фамилия" class="form-control" name="last_name" id="last_name">
+                        <div class="error"></div>
                     </div>
                 </div>
                 <div class="modal-row grid-row">
                     <div class="modal-col">
                         <label for="email">Ваша Эл. почта</label>
-                        <input type="email" placeholder="Email" class="form-control" name="email">
+                        <input type="email" placeholder="Email" class="form-control" name="email" id="email">
+                        <div class="error"></div>
                     </div>
                     <div class="modal-col">
                         <label for="phone">Телефон</label>
-                        <input type="text" placeholder="Номер телефона" class="form-control" name="phone">
+                        <input type="text" placeholder="Номер телефона" class="form-control" name="phone" id="phone">
+                        <div class="error"></div>
                     </div>
                 </div>
                 <div class="modal-row grid-row">
                     <div class="modal-col">
                         <label for="street_addr">Адрес</label>
                         <input type="text" placeholder="Улица, дом, квартират.д" class="form-control"
-                            name="street_addr">
+                            name="street_addr" id="street_addr">
+                            <div class="error"></div>
                     </div>
                     <div class="modal-col">
                         <label for="postal_code">Почтовый индекс</label>
-                        <input type="text" placeholder="Например: 614046" class="form-control" name="postal_code">
+                        <input type="text" placeholder="Например: 614046" class="form-control" name="postal_code" id="postal_code">
+                        <div class="error"></div>
                     </div>
                 </div>
                 <div class="modal-row">
                     <div class="modal-col">
                         <label for="city_region">Город, Регион</label>
-                        <input type="text" placeholder="Например: Пермь" class="form-control" name="city_region_search" id="city_region_search">
+                        <input type="text" placeholder="Например: Пермь" class="form-control search" name="city_region_search" id="city_region_search">
+                        <i class="fas fa-search"></i>
                         <select name="city_region" id="city_region_list">
-
-                            <option value="">Очёр, Пермская обл.</option>
 
                         </select>
                     </div>
