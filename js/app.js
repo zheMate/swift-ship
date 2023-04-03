@@ -6,7 +6,6 @@ const closeBtn = document.getElementById('close-btn');
 const modalBtns = document.getElementById('modal-btns');
 const modalForm = document.getElementById('modal');
 const orderBookList = document.querySelector('#order-book-list tbody');
-const updateButton = document.getElementById('update-btn');
 const saveButton = document.getElementById('save-btn');
 
 // const addressingNameForValidation = document.getElementById('addr_ing_name');
@@ -249,10 +248,9 @@ function eventListeners() {
             let id = event.target.dataset.id;
             let isFormValid = getFormData();
             if (!isFormValid) {
-                updateButton.disabled = true;
+                alert('Введите корректные данные для обновления !');
             }
             else {
-                updateButton.disabled = false;
                 const orderItem = new Order(id, addrName, firstName, lastName, email, phone, streetAddr, postCode, cityAndRegion, labels);
                 Order.updateOrder(orderItem);
                 UI.closeModal();
