@@ -320,10 +320,22 @@ function getFormData() {
         const re = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
         return re.test(phone);
     }
+    const isStringCyrillic = string => {
+        const re = /^[а-яА-Я]/u;
+        return re.test(string);
+    }
+    const isPostCodeNumberOfSixCharacters = number => {
+        const re = /^\d{6,}$/;
+        return re.test(number);
+    }
 
     if (addressingNameForValidation === '') {
         inputValidStatus[0] = false;
         setError(modalForm.addr_ing_name, 'Имя получателя, обязательное поле');
+    }
+    else if (!isStringCyrillic(addressingNameForValidation)) {
+        inputValidStatus[0] = false;
+        setError(modalForm.addr_ing_name, 'Только кириллица !');
     }
     else {
         inputValidStatus[0] = true;
@@ -334,6 +346,10 @@ function getFormData() {
         inputValidStatus[1] = false;
         setError(modalForm.first_name, 'Имя, обязательное поле');
     }
+    else if (!isStringCyrillic(firstNameForValidation)) {
+        inputValidStatus[1] = false;
+        setError(modalForm.first_name, 'Только кириллица !');
+    }
     else {
         inputValidStatus[1] = true;
         setSuccess(modalForm.first_name);
@@ -342,6 +358,10 @@ function getFormData() {
     if (lastNameForValidation === '') {
         inputValidStatus[2] = false;
         setError(modalForm.last_name, 'Фамилия, обязательное поле');
+    }
+    else if (!isStringCyrillic(lastNameForValidation)) {
+        inputValidStatus[2] = false;
+        setError(modalForm.last_name, 'Только кириллица !');
     }
     else {
         inputValidStatus[2] = true;
@@ -379,6 +399,10 @@ function getFormData() {
         inputValidStatus[5] = false;
         setError(modalForm.street_addr, 'Адрес, обязательное поле');
     }
+    else if (!isStringCyrillic(streetAddressForValidation)) {
+        inputValidStatus[5] = false;
+        setError(modalForm.street_addr, 'Только кириллица !');
+    }
     else {
         inputValidStatus[5] = true;
         streetAddr = modalForm.street_addr.value;
@@ -387,6 +411,14 @@ function getFormData() {
     if (postalCodeForValidation === '') {
         inputValidStatus[6] = false;
         setError(modalForm.postal_code, 'Почтовый индекс, обязательное поле');
+    }
+    else if (!isPostCodeNumberOfSixCharacters(postalCodeForValidation)) {
+        inputValidStatus[6] = false;
+        setError(modalForm.postal_code, 'Индекс состоит из 6 ЦИФР !');
+    }
+    else if(postalCodeForValidation < 0){
+        inputValidStatus[6] = false;
+        setError(modalForm.postal_code, 'Индекс o_O с минусом ?');
     }
     else {
         inputValidStatus[6] = true;
